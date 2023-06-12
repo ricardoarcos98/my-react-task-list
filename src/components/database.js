@@ -1,5 +1,3 @@
+export const listaTareas = [
 
-//  export const database = [ 
-//      { nombre: "Tarea 1"},
-     
-// ] 
+]
