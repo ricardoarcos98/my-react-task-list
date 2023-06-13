@@ -5,7 +5,7 @@ export const TaskTable = ({tasks,  toggleTask}) => {
     <table>
     <thead>
       <tr>
-        <th> Tasks </th>
+        <th>  </th>
       </tr>
     </thead>
     <tbody>
