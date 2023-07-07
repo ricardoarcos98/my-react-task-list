@@ -1,20 +1,21 @@
 import React from "react";
 import { TaskRow } from "./TaskRow";
+import "../TodoList.css"
+import "../TodoItem.css"
 
-export const TaskTable = ({ task, setTasksItems, toggleTask, handleDelete, EditTask }) => {
+export const TaskTable = ({ task, toggleTask, handleDelete, EditTask }) => {
   return (
-  <ul>
+  <ul className=" TodoList">
     
         {task.map(
-          (task) => (
+          (task, index) => (
               <TaskRow
-              key={task.name} // cada key es distinto, por eso es con name.
+              className="TodoItem"
+              key={index} // cada key es distinto, por eso es con name.
               task={task}
-              setTasksItems={setTasksItems}
               toggleTask={toggleTask}
               handleDelete={handleDelete}
               EditTask={EditTask }
-              
               />
               )
               )}

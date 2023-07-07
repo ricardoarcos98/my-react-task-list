@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
   font-family: 'Montserrat';
+  
 
 }
 /* HTML5 display-role reset for older browsers */
@@ -32,6 +33,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	min-height: 100vh;
+	background-image: linear-gradient(to right bottom, rgb(56, 189, 248), rgb(59, 130, 246));
 	
 }
 ol, ul {

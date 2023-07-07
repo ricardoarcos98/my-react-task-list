@@ -1,6 +1,10 @@
 // cra el input y el boton de save task 
 
 import { useState } from "react";
+import '../TodoSearch.css'
+import '../CreateTodoButton.css'
+
+
 export const TaskCreator = ({createNewTask}) => { 
   // utiliza props 
 
@@ -17,12 +21,13 @@ export const TaskCreator = ({createNewTask}) => {
     <>
     <form onSubmit={handleSubmit}>
       <input
+        className="TodoSearch"
         type="text"
         placeholder="Enter a new task"
         value={newTaskName} // nos sirve para que aparezca vacio cuando se quiere hacer otra llamada 
         onChange={(e) => setNewTaskName(e.target.value)} // se entiende que va a cambiar por lo cual hace un llamado
       />
-      <button>ADD</button> 
+      <button className="CreateTodoButton">+</button> 
     </form>
     </>
 

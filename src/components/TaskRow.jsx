@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import { TfiBrush } from "react-icons/tfi";
 export const TaskRow = ({ task, toggleTask, handleDelete, EditTask }) => {
  
   // ayuda a la logica con el input cuando cambia
   const [switchEdit, setSwitchEdit]=useState(false)
   const [edit, setEdit]=useState(task)
   
-
-
   if(switchEdit){
     return(
       <>
@@ -16,36 +15,26 @@ export const TaskRow = ({ task, toggleTask, handleDelete, EditTask }) => {
       name: e.target.value
       })}}
       />
-      <button onClick={()=>
-        {EditTask(edit );
-        setSwitchEdit(false)
-        }}>
+      <button onClick={()=> {EditTask(edit );
+        setSwitchEdit(false) }}>
         SAVE
       </button>
       </>
     )
   }else{
     return (
-      <li>
+      <li className="TodoItem">
           <input
+            className="TodoItem-p  "
             type="checkbox"
             checked={task.done}
-            onChange={() => toggleTask(task)  }
+            onChange={() => toggleTask(task)   
+            }
             />
-          {task.name}
-
-          {/* Boton Eliminar  */}
-          <button
-            type="submit"
-            onClick={() => {
-              handleDelete(task.name);
-            }}
-            className="Delete"
-            >
-            DELETE
-          </button>
-
-          {/* Boton Editar  */}
+           
+            {task.name}
+            
+          
           
           <button
             onClick={() => {
@@ -54,7 +43,19 @@ export const TaskRow = ({ task, toggleTask, handleDelete, EditTask }) => {
             className="Edit"
           >
             EDIT
+            </button>
+
+
+          <button
+            type="submit"
+            onClick={() => {
+              handleDelete(task.name);
+            }}
+            className="Delete"
+            >
+            X
           </button>
+          
       </li>
 
     );  
