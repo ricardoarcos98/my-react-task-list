@@ -1,22 +1,24 @@
-import React from 'react'
-import { TaskRow } from './TaskRow'
-export const TaskTable = ({tasks,  toggleTask}) => {
+import React from "react";
+import { TaskRow } from "./TaskRow";
+
+export const TaskTable = ({ task, setTasksItems, toggleTask, handleDelete, EditTask }) => {
   return (
-    <table>
-    <thead>
-      <tr>
-        <th>  </th>
-      </tr>
-    </thead>
-    <tbody>
-
-  {
-    tasks.map( task => (  //esto se hace para recorrer el arreglo y mostrarlo
-    <TaskRow task={task} key={task.name} toggleTask={toggleTask}/>  
-    ))
-  }
-    </tbody>
-  </table>
-
-  )
-}
+  <ul>
+    
+        {task.map(
+          (task) => (
+              <TaskRow
+              key={task.name} // cada key es distinto, por eso es con name.
+              task={task}
+              setTasksItems={setTasksItems}
+              toggleTask={toggleTask}
+              handleDelete={handleDelete}
+              EditTask={EditTask }
+              
+              />
+              )
+              )}
+    
+   </ul> 
+  );
+};

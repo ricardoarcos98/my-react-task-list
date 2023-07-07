@@ -1,9 +1,12 @@
-import { useState } from "react";
+// cra el input y el boton de save task 
 
-export const TaskCreator = ({createNewTask}) => { // utiliza props 
+import { useState } from "react";
+export const TaskCreator = ({createNewTask}) => { 
+  // utiliza props 
 
   const [newTaskName, setNewTaskName] = useState("");
   // crea una funcion que se encarga en enviar el formulario y guardarlo
+
   const handleSubmit = (e) => {
     e.preventDefault();
     createNewTask(newTaskName); // llama a la función en app utiliza props 
@@ -11,6 +14,7 @@ export const TaskCreator = ({createNewTask}) => { // utiliza props
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -18,7 +22,9 @@ export const TaskCreator = ({createNewTask}) => { // utiliza props
         value={newTaskName} // nos sirve para que aparezca vacio cuando se quiere hacer otra llamada 
         onChange={(e) => setNewTaskName(e.target.value)} // se entiende que va a cambiar por lo cual hace un llamado
       />
-      <button> Save Task</button> 
+      <button>ADD</button> 
     </form>
+    </>
+
   );
 };
